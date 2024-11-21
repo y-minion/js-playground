@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width= , initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>구구단을 해보겠습니다</h1>
+    <script>
+      function calculate(num) {
+        var results = []; //배열 초기화
+        for (var i = 0; i < 9; i++) {
+          var result = num * (i + 1); //구구단 시행..
+          results.push(result); //구구단 결과를 배열에 삽입
+        }
+        return results; //함수값을 밖으로 꺼냄
+      }
+
+      function print(step, results) {
+        for (var n = 0; n < 9; n++) {
+          var sum = "";
+          //   sum += results[0]; //이 코드를 더 좋게 바꾸고 싶은데...
+          sum += step; //개선 방안
+          sum += "X";
+          sum += n + 1;
+          sum += "=";
+          sum += results[n];
+          sum += "<br>";
+          document.write(sum);
+        }
+      }
+
+      function main() {
+        for (var z = 1; z < 9; z++) {
+          document.write("<h2>" + (z + 1) + "단입니다</h2>");
+          var results = calculate(z + 1);
+          print(z + 1, results);
+        }
+      }
+      main();
+    </script>
+  </body>
+</html>
