@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>객체를 이용한 문자열 계산기</h1>
+    <div id="output">아뱌뱌 우땨땨~!</div>
+    <script>
+      var input = {}; //객체를 왜 생성해야하지..? 왜 필요한걸까..
+      //내생각__input 기능이 있는 객체를 생성해서 비슷한 메소드들을 집합시켜 정리한다.
+      input.getFirstValue = function () {
+        var n = Number(prompt("첫 번째 값을 입력해 주세요"));
+        return n;
+      };
+      input.n = 2;
+
+      input.getSecondValue = function () {
+        var num2 = Number(prompt(input.n + "번째 값을 입력해 주세요."));
+        input.n++;
+        return num2;
+      };
+      input.getOperator = function () {
+        while (true) {
+          var op = prompt("산술 계산자를 입력해주세요.");
+          if (
+            op === "+" ||
+            op === "-" ||
+            op === "*" ||
+            op === "/" ||
+            op === "q"
+          ) {
+            break;
+          } else {
+            alert("제대로 된 사칙연산 기호를 입력해 주세요.");
+          }
+        }
+        return op;
+      };
+
+      var output = {};
+      output.print = function (value) {
+        return "최종 결과값은 " + value + "입니다";
+      };
+
+      var calculator = {};
+      calculator.calculate = function (first, second, op) {
+        var ret;
+        switch (op) {
+          case "+":
+            ret = first + second;
+            break;
+          case "-":
+            ret = first - second;
+            break;
+          case "*":
+            ret = first * second;
+            break;
+          case "/":
+            ret = first / second;
+            break;
+        }
+        return ret;
+      };
+
+      function main() {
+        var result = input.getFirstValue();
+        while (true) {
+          var op = input.getOperator();
+          if (op === "q") {
+            break;
+          }
+          var num = input.getSecondValue();
+          result = calculator.calculate(result, num, op);
+        }
+        var out = document.getElementById("output");
+        out.innerHTML = output.print(result);
+      }
+      main();
+    </script>
+  </body>
+</html>
