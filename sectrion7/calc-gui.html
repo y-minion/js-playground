@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 계산기</title>
+  </head>
+  <body>
+    <h1>JS 계산기</h1>
+    <div>
+      <div id="output">0</div>
+      <div id="btn1">
+        <button id="7" onclick="cickNumbers(event)">7</button>
+        <button id="8" onclick="cickNumbers(event)">8</button>
+        <button id="9" onclick="cickNumbers(event)">9</button>
+        <button id="div" onclick="cickOthers(event)">/</button>
+      </div>
+      <div id="btn2">
+        <button id="4" onclick="cickNumbers(event)">4</button>
+        <button id="5" onclick="cickNumbers(event)">5</button>
+        <button id="6" onclick="cickNumbers(event)">6</button>
+        <button id="mul" onclick="cickOthers(event)">*</button>
+      </div>
+      <div id="btn3">
+        <button id="1" onclick="cickNumbers(event)">1</button>
+        <button id="2" onclick="cickNumbers(event)">2</button>
+        <button id="3" onclick="cickNumbers(event)">3</button>
+        <button id="sub" onclick="cickOthers(event)">-</button>
+      </div>
+      <div id="btn3">
+        <button id="del" onclick="cickOthers(event)">BS</button>
+        <button id="0" onclick="cickNumbers(event)">0</button>
+        <button id="eq" onclick="cickOthers(event)">=</button>
+        <button id="plus" onclick="cickOthers(event)">+</button>
+      </div>
+    </div>
+
+    <script src="calc-gui.js"></script>
+  </body>
+</html>
